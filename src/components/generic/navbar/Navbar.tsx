@@ -5,21 +5,30 @@ import RLogo from "@/assets/logoNew.png";
 import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import ActionButton from "../buttons/ActionButton";
 // import RLogo from "@/assets/logoNy.png";
 
 type Props = {
+  isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar: React.FC<Props> = ({ selectedPage, setSelectedPage }) => {
+const Navbar: React.FC<Props> = ({
+  isTopOfPage,
+  selectedPage,
+  setSelectedPage,
+}) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediaScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
   return (
     <nav>
-      <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+      <div
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+      >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* Left side logo */}
@@ -56,7 +65,9 @@ const Navbar: React.FC<Props> = ({ selectedPage, setSelectedPage }) => {
                 {/* Sign in, Become a Member  */}
                 <div className={`${flexBetween} gap-8`}>
                   <p>Log ind</p>
-                  <button>Bliv medlem</button>
+                  <ActionButton setSelectedPage={setSelectedPage}>
+                    Bliv medlem
+                  </ActionButton>
                 </div>
               </div>
             ) : (
@@ -71,6 +82,40 @@ const Navbar: React.FC<Props> = ({ selectedPage, setSelectedPage }) => {
           </div>
         </div>
       </div>
+      {/*Mobil Screen Menu Modal*/}
+      {!isAboveMediaScreens && isMenuToggled && (
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+          {/* Close icon */}
+          <div className="flex justify-end p-12">
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <XMarkIcon className="h-6 w-6 text-gray-400" />
+            </button>
+          </div>
+          {/* Items in Menu */}
+          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+            <Link
+              page="Forside"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Om Bigården"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Vores Honning"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Kontakt os"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,6 +1,6 @@
 export enum SelectedPage {
   Forside = "forside",
-  OmBigården = "ombigården",
+  OmBigaarden = "ombigaarden",
   VoresHonning = "voreshonning",
   KontaktOs = "kontaktos",
 }

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-// import Logo from "@/assets/Logo.png";
+// import Logo from "@/assets//navbar-imgs/Logo.png";
 import RLogo from "@/assets/navbar-imgs/logoNew.png";
 import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "../buttons/ActionButton";
-// import RLogo from "@/assets/logoNy.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
   isTopOfPage: boolean;
@@ -32,9 +32,22 @@ const Navbar: React.FC<Props> = ({
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* Left side logo */}
-            <img alt="mainLogo" src={RLogo} />
-            {/* <img alt="mainLogo" src={Logo} /> */}
-
+            <button
+              onClick={() => {
+                window.location.reload();
+                window.location.href = `#${SelectedPage.Forside}`;
+              }}
+            >
+              <AnchorLink
+                className=""
+                onClick={() => setSelectedPage(SelectedPage.Forside)}
+                href={`#${SelectedPage.Forside}`}
+              >
+                {/* LOGO SKAL GØRES MINDRE, SÅ DET PASSER MED NAVBAR! */}
+                <img alt="mainLogo" src={RLogo} />
+                {/* <img alt="mainLogo" src={Logo} /> */}
+              </AnchorLink>
+            </button>
             {/* Right side logo */}
             {/* Innerside links/logos */}
             {isAboveMediaScreens ? (
@@ -47,12 +60,12 @@ const Navbar: React.FC<Props> = ({
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Om Bigården"
+                    page="Vores Honning"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Vores Honning"
+                    page="Om Bigården"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -99,12 +112,12 @@ const Navbar: React.FC<Props> = ({
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Om Bigården"
+              page="Vores Honning"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Vores Honning"
+              page="Om Bigården"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />

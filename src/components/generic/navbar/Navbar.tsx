@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 // import Logo from "@/assets//navbar-imgs/Logo.png";
-import RLogo from "@/assets/navbar-imgs/logoNew.png";
+// import RLogo from "@/assets/navbar-imgs/logoNew.png";
+import RLogo from "@/assets/navbar-imgs/BiavlerHamidLogo1-removebg.png";
 import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -22,7 +23,13 @@ const Navbar: React.FC<Props> = ({
   const flexBetween = "flex items-center justify-between";
   const isAboveMediaScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-brownish-300 drop-shadow";
+  const navbarBackground = isTopOfPage
+    ? ""
+    : "bg-brownish-300 drop-shadow text-gray-20 transition ActionButtonKontakt:";
+
+  // const KontaktBtnOnTopOfPage = isTopOfPage
+  //   ? ""
+  //   : "bg-yelloworange-300 text-brownish-300 rounded-md text-white px-10 py-2";
 
   return (
     <nav>
@@ -48,6 +55,7 @@ const Navbar: React.FC<Props> = ({
                 {/* <img alt="mainLogo" src={Logo} /> */}
               </AnchorLink>
             </button>
+
             {/* Right side logo */}
             {/* Innerside links/logos */}
             {isAboveMediaScreens ? (
@@ -65,7 +73,7 @@ const Navbar: React.FC<Props> = ({
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Om Bigården"
+                    page="Vores Bigård"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -75,27 +83,29 @@ const Navbar: React.FC<Props> = ({
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
+
                 {/* Sign in, Become a Member  */}
                 <div className={`${flexBetween} gap-8`}>
                   <AnchorLink
-                    className="text-sm font-bold text-yelloworange-300 hover:text-primary-500"
-                    onClick={() => setSelectedPage(SelectedPage.OmBigaarden)}
-                    href={`#${SelectedPage.OmBigaarden}`}
+                    className=" text-yelloworange-300 hover:text-primary-500"
+                    onClick={() => setSelectedPage(SelectedPage.VoresBigård)}
+                    href={`#${SelectedPage.VoresBigård}`}
                   >
                     <p>Læs mere</p>
                   </AnchorLink>
+
                   <ActionButtonKontakt setSelectedPage={setSelectedPage}>
-                    Kontakt Bigården
+                    Kontakt Biavleren
                   </ActionButtonKontakt>
                 </div>
               </div>
             ) : (
               //When user is on mobilescreens
               <button
-                className="rounded-full bg-brownish-300 p-3"
+                className="rounded-full bg-brownish-300 p-2"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
-                <Bars3Icon className="h-6 w-6 text-white" />
+                <Bars3Icon className="h-6 w-6 text-gray-20" />
               </button>
             )}
           </div>
@@ -103,15 +113,15 @@ const Navbar: React.FC<Props> = ({
       </div>
       {/*Mobil Screen Menu Modal*/}
       {!isAboveMediaScreens && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-brownish-300 drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[310px] text-gray-20 bg-brownish-300 drop-shadow-xl">
           {/* Close icon */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <XMarkIcon className="h-6 w-6 text-gray-400" />
+              <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
           {/* Items in Menu */}
-          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+          <div className="ml-[33%] flex flex-col gap-10 text-xl ">
             <Link
               page="Forside"
               selectedPage={selectedPage}
@@ -123,7 +133,7 @@ const Navbar: React.FC<Props> = ({
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Om Bigården"
+              page="Vores Bigård"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />

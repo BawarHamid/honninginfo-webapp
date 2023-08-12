@@ -31,9 +31,6 @@ export default {
       },
       content: {
         logotext: "url('./assets/home-page-imgs/hptBG.png')",
-        abstractwaves: "url('./assets/AbstractWaves.png')",
-        sparkles: "url('./assets/Sparkles.png')",
-        circles: "url('./assets/Circles.png')",
       },
     },
     screens: {

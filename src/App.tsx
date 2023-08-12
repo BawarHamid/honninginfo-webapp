@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/generic/navbar/Navbar";
 import { SelectedPage } from "@/shared/types";
-import Home from "@/pagescenes/Home";
-import OmBigaarden from "@/pagescenes/OmBigaarden";
+import Forside from "@/pagescenes/Forside";
+// import OmBigaarden from "@/pagescenes/OmBigaarden";
 import VoresHonning from "@/pagescenes/VoresHonning";
 import KontaktOs from "@/pagescenes/KontaktOs";
 import Footer from "./components/footer/Footer";
+import VoresBigaard from "./pagescenes/VoresBigaard";
 
 const App: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -34,9 +35,10 @@ const App: React.FC = () => {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <Home setSelectedPage={setSelectedPage} />
+      <Forside setSelectedPage={setSelectedPage} />
       <VoresHonning setSelectedPage={setSelectedPage} />
-      <OmBigaarden setSelectedPage={setSelectedPage} />
+      {/* <OmBigaarden setSelectedPage={setSelectedPage} /> */}
+      <VoresBigaard setSelectedPage={setSelectedPage} />
       <KontaktOs setSelectedPage={setSelectedPage} />
       <Footer setSelectedPage={setSelectedPage} />
     </div>

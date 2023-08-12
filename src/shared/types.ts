@@ -3,8 +3,9 @@ import { ReactElement } from "react";
 export enum SelectedPage {
   Forside = "forside",
   VoresHonning = "voreshonning",
-  OmBigaarden = "ombigaarden",
+  // OmBigaarden = "ombigaarden",
   KontaktOs = "kontaktos",
+  VoresBigård = "voresbigård",
 }
 
 export interface HonningType {

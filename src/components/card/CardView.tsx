@@ -25,7 +25,7 @@ const CardView: React.FC<Props> = ({
 }) => {
   return (
     <motion.div
-      className="mt-5 rounded-md border-4 border-gray-50 px-5 py-6 h-[600px] w-[400px]"
+      className="mt-5 rounded-md border-4 border-gray-20 px-5 py-6 md:h-[600px] md:w-[400px]"
       variants={childVariant}
     >
       <p className="font-normal text-lg text-center">{typeofhoney}</p>

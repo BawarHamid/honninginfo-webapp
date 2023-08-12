@@ -13,8 +13,8 @@ const ActionButtonBigaard: React.FC<Props> = ({
   return (
     <AnchorLink
       className="rounded-md bg-brownish-100 text-white px-10 py-2 hover:bg-yelloworange-300 hover:text-brownish-300"
-      onClick={() => setSelectedPage(SelectedPage.OmBigaarden)}
-      href={`#${SelectedPage.OmBigaarden}`}
+      onClick={() => setSelectedPage(SelectedPage.VoresBigård)}
+      href={`#${SelectedPage.VoresBigård}`}
     >
       {children}
     </AnchorLink>

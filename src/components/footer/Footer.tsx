@@ -38,8 +38,8 @@ const Footer: React.FC<Props> = ({ setSelectedPage }) => {
           </AnchorLink>
           <AnchorLink
             className="text-sm font-bold hover:text-yellowgolden-100 underline leading-loose"
-            onClick={() => setSelectedPage(SelectedPage.OmBigaarden)}
-            href={`#${SelectedPage.OmBigaarden}`}
+            onClick={() => setSelectedPage(SelectedPage.VoresBigård)}
+            href={`#${SelectedPage.VoresBigård}`}
           >
             <p>Bigården</p>
           </AnchorLink>

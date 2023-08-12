@@ -72,16 +72,13 @@ const KontaktOs: React.FC<Props> = ({ setSelectedPage }) => {
             {/* </ul> */}
 
             <div className="flex">
-              <EnvelopeIcon className="h-7 w-7 text-brownish-100" />
-              <p className="ml-1">Send en</p>{" "}
-              <span className="text-black ml-1">Email</span>
-              <p className="ml-1">til:</p>
-              <span className="ml-1 text-black">HamidHonning@gmail.com</span>
+              <EnvelopeIcon className="h-8 w-8 text-brownish-100" />
+              <p className="ml-1">Send en E-mail til: HamidHonning@gmail.com</p>
             </div>
             <br />
 
             <div className="flex">
-              <PencilSquareIcon className="h-7 w-7 text-brownish-100" />
+              <PencilSquareIcon className="h-8 w-8 text-brownish-100" />
               <p className="ml-1">
                 Ellers henvend dig via. nedstående kontaktformat:
               </p>
@@ -110,7 +107,7 @@ const KontaktOs: React.FC<Props> = ({ setSelectedPage }) => {
             >
               <input
                 type="text"
-                placeholder="NAME"
+                placeholder="Navn"
                 className={`${inputStyles}`}
                 {...register("name", { required: true, maxLength: 100 })}
               />
@@ -123,7 +120,7 @@ const KontaktOs: React.FC<Props> = ({ setSelectedPage }) => {
 
               <input
                 type="text"
-                placeholder="EMAIL"
+                placeholder="E-mail"
                 className={`${inputStyles}`}
                 {...register("email", {
                   required: true,
@@ -140,7 +137,7 @@ const KontaktOs: React.FC<Props> = ({ setSelectedPage }) => {
               <textarea
                 rows={10}
                 cols={50}
-                placeholder="MESSAGE"
+                placeholder="Besked"
                 className={`${inputStyles}`}
                 {...register("message", { required: true, maxLength: 2000 })}
               />

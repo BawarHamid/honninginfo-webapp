@@ -1,4 +1,4 @@
-import ActionButton from "@/components/generic/buttons/ActionButton";
+import ActionButtonKontakt from "@/components/generic/buttons/ActionButtonKontakt";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -11,6 +11,8 @@ import spons4 from "@/assets/spons-logo-folder/logo4_92x68.png";
 import spons5 from "@/assets/spons-logo-folder/logo5_92x68.png";
 import HPageText from "@/assets/home-page-imgs/HomePageText.png";
 import { motion } from "framer-motion";
+import ActionButtonBigaard from "@/components/generic/buttons/ActionButtonBigaard";
+import ActionButtonHonning from "@/components/generic/buttons/ActionButtonHonning";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -46,11 +48,12 @@ const Home: React.FC<Props> = ({ setSelectedPage }) => {
               </div>
             </div>
             <p className="mt-8 text-sm">
-              Honning tekst beskrivelse etc.......... Honning tekst beskrivelse
-              etc.......... Honning tekst beskrivelse etc.......... Honning
-              tekst beskrivelse etc.......... Honning tekst beskrivelse
-              etc.......... Honning tekst beskrivelse etc.......... Honning
-              tekst beskrivelse etc..........
+              Velkommen til vores verden af bier og lækker dansk honning.
+              Udforsk vores passion for biavl, hvor hver dråbe honning er et
+              resultat af naturens samspil. Lær om biernes fascinerende liv,
+              vores omhyggelige pleje af dem og den skønne honnings unikke
+              smagsoplevelse. Dyk ned i vores bigård og del denne søde rejse med
+              os.
             </p>
           </motion.div>
 
@@ -66,13 +69,13 @@ const Home: React.FC<Props> = ({ setSelectedPage }) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <ActionButton setSelectedPage={setSelectedPage}>
+            <ActionButtonHonning setSelectedPage={setSelectedPage}>
               Køb i dag!
-            </ActionButton>
+            </ActionButtonHonning>
             <AnchorLink
-              className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-              onClick={() => setSelectedPage(SelectedPage.KontaktOs)}
-              href={`#${SelectedPage.KontaktOs}`}
+              className="text-sm font-bold text-primary-500 underline hover:text-yelloworange-300"
+              onClick={() => setSelectedPage(SelectedPage.OmBigaarden)}
+              href={`#${SelectedPage.OmBigaarden}`}
             >
               <p>Læs mere</p>
             </AnchorLink>
@@ -98,7 +101,7 @@ const Home: React.FC<Props> = ({ setSelectedPage }) => {
 
       {/* Sponsor */}
       {isAboveMediumScreens && (
-        <div className="h-[150px] w-full bg-primary-100 py-10">
+        <div className="h-[150px] w-full bg-brownish-300 py-10">
           <div className="mx-auto w-5/6">
             <motion.div
               className="flex w-3/5 items-center justify-between gap-32"

@@ -66,7 +66,7 @@ type Props = {
 
 const OmBigaarden: React.FC<Props> = ({ setSelectedPage }) => {
   return (
-    <section id="ombigaarden" className="w-full bg-primary-100 py-40">
+    <section id="ombigaarden" className="w-full bg-gray-20 py-40">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.OmBigaarden)}
       >
@@ -83,11 +83,11 @@ const OmBigaarden: React.FC<Props> = ({ setSelectedPage }) => {
         >
           <div className="md:w-3/6">
             <PageTile title="Om Bigården" />
-            <p className="py-5">
+            <p className="py-5 leading-relaxed">
               Velkommen til <br />
               Jeg hedder Hamid, og jeg driver en mindre biavl på ca. 5
               bifamilier. <br />
-              Vores bistader står ude i vores have og ude i nature omkring
+              Vores bistader står ude i vores have, ude i naturen omkring
               Over-Holluf/Fraugde på Fyn. <br />
               Vi driver vores biavl efter det som Danmarks Biavlerforening
               kalder "Den sikre strategi", og det betyder en naturlig biavl,

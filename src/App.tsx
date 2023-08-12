@@ -3,7 +3,9 @@ import Navbar from "@/components/generic/navbar/Navbar";
 import { SelectedPage } from "@/shared/types";
 import Home from "@/pagescenes/Home";
 import OmBigaarden from "@/pagescenes/OmBigaarden";
-import VoresHonning from "./pagescenes/VoresHonning";
+import VoresHonning from "@/pagescenes/VoresHonning";
+import KontaktOs from "@/pagescenes/KontaktOs";
+import Footer from "./components/footer/Footer";
 
 const App: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -35,6 +37,8 @@ const App: React.FC = () => {
       <Home setSelectedPage={setSelectedPage} />
       <VoresHonning setSelectedPage={setSelectedPage} />
       <OmBigaarden setSelectedPage={setSelectedPage} />
+      <KontaktOs setSelectedPage={setSelectedPage} />
+      <Footer setSelectedPage={setSelectedPage} />
     </div>
   );
 };

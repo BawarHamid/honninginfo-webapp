@@ -1,4 +1,4 @@
-import ActionButtonKontakt from "@/components/generic/buttons/ActionButtonKontakt";
+// import ActionButtonKontakt from "@/components/generic/buttons/ActionButtonKontakt";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -11,14 +11,14 @@ import spons4 from "@/assets/spons-logo-folder/logo4_92x68.png";
 import spons5 from "@/assets/spons-logo-folder/logo5_92x68.png";
 import HPageText from "@/assets/home-page-imgs/HomePageText.png";
 import { motion } from "framer-motion";
-import ActionButtonBigaard from "@/components/generic/buttons/ActionButtonBigaard";
+// import ActionButtonBigaard from "@/components/generic/buttons/ActionButtonBigaard";
 import ActionButtonHonning from "@/components/generic/buttons/ActionButtonHonning";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Home: React.FC<Props> = ({ setSelectedPage }) => {
+const Forside: React.FC<Props> = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
 
   return (
@@ -74,8 +74,8 @@ const Home: React.FC<Props> = ({ setSelectedPage }) => {
             </ActionButtonHonning>
             <AnchorLink
               className="text-sm font-bold text-primary-500 underline hover:text-yelloworange-300"
-              onClick={() => setSelectedPage(SelectedPage.OmBigaarden)}
-              href={`#${SelectedPage.OmBigaarden}`}
+              onClick={() => setSelectedPage(SelectedPage.VoresBigård)}
+              href={`#${SelectedPage.VoresBigård}`}
             >
               <p>Læs mere</p>
             </AnchorLink>
@@ -128,4 +128,4 @@ const Home: React.FC<Props> = ({ setSelectedPage }) => {
   );
 };
 
-export default Home;
+export default Forside;

@@ -64,9 +64,9 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const OmBigaarden: React.FC<Props> = ({ setSelectedPage }) => {
+const VoresBigaard: React.FC<Props> = ({ setSelectedPage }) => {
   return (
-    <section id="ombigaarden" className="w-full bg-gray-20 py-40">
+    <section id="voresbigård" className="w-full bg-gray-20 py-40">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.VoresBigård)}
       >
@@ -82,8 +82,8 @@ const OmBigaarden: React.FC<Props> = ({ setSelectedPage }) => {
           }}
         >
           <div className="md:w-3/6">
-            <PageTile title="Om Bigården" />
-            <p className="py-5 leading-relaxed">
+            <PageTile title="Vores Bigård" />
+            <p className="py-10 leading-relaxed">
               Velkommen til <br />
               Jeg hedder Hamid, og jeg driver en mindre biavl på ca. 5
               bifamilier. <br />
@@ -98,6 +98,7 @@ const OmBigaarden: React.FC<Props> = ({ setSelectedPage }) => {
             </p>
           </div>
         </motion.div>
+
         <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
           <ul className="w-[2800px] whitespace-nowrap">
             {billeder.map((item: BigaardSliderType, index) => (
@@ -115,4 +116,4 @@ const OmBigaarden: React.FC<Props> = ({ setSelectedPage }) => {
   );
 };
 
-export default OmBigaarden;
+export default VoresBigaard;

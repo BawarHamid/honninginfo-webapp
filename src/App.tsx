@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/generic/navbar/Navbar";
 import { SelectedPage } from "@/shared/types";
-import Forside from "@/pagescenes/Forside";
+import Forside from "@/screens/Forside";
 // import OmBigaarden from "@/pagescenes/OmBigaarden";
-import VoresHonning from "@/pagescenes/VoresHonning";
-import KontaktOs from "@/pagescenes/KontaktOs";
+import VoresHonning from "@/screens/VoresHonning";
+import KontaktOs from "@/screens/KontaktOs";
 import Footer from "./components/footer/Footer";
-import VoresBigaard from "./pagescenes/VoresBigaard";
+import VoresBigaard from "./screens/VoresBigaard";
 
 const App: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(

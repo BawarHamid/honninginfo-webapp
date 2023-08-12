@@ -54,31 +54,31 @@ const KontaktOs: React.FC<Props> = ({ setSelectedPage }) => {
             {/* <li> */}
             <div className="flex">
               <PhoneIcon className="h-7 w-7 text-brownish-100" />
-              <p className="ml-1">Ring mellem 09-17 på:</p>
-              <span className="text-black ml-1">+45 63112255 </span>
+              <p className="ml-1">
+                Ring mellem 09-17 på: <br /> +45 63112255
+              </p>
             </div>
             <br />
             {/* </li> */}
             {/* <li> */}
             <div className="flex">
               <ChatBubbleLeftEllipsisIcon className="h-7 w-7 text-brownish-100" />
-              <p className="ml-1">Send en</p>{" "}
-              <span className="text-black ml-1">SMS</span>
-              <p className="ml-1">til:</p>
-              <span className="ml-1 text-black">+45 63112255 </span>
+              <p className="ml-1">
+                Send en SMS til: <br /> +45 63112255
+              </p>
             </div>
             <br />
             {/* </li> */}
             {/* </ul> */}
 
             <div className="flex">
-              <EnvelopeIcon className="h-8 w-8 text-brownish-100" />
+              <EnvelopeIcon className="h-6 w-8 text-brownish-100" />
               <p className="ml-1">Send en E-mail til: HamidHonning@gmail.com</p>
             </div>
             <br />
 
             <div className="flex">
-              <PencilSquareIcon className="h-8 w-8 text-brownish-100" />
+              <PencilSquareIcon className="h-6 w-8 text-brownish-100" />
               <p className="ml-1">
                 Ellers henvend dig via. nedstående kontaktformat:
               </p>
@@ -113,8 +113,9 @@ const KontaktOs: React.FC<Props> = ({ setSelectedPage }) => {
               />
               {errors.name && (
                 <p className="mt-1 text-primary-500">
-                  {errors.name.type === "required" && "This field is required"}
-                  {errors.name.type === "required" && "Max length is 100 char!"}
+                  {errors.name.type === "required" && "This field is required"}{" "}
+                  <br />
+                  {errors.name.type === "maxLength" && "Maxlength is 100 char!"}
                 </p>
               )}
 
